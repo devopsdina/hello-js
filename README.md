@@ -15,6 +15,12 @@ const clientSideID = 'myClientSideID';
 const flagKey = 'my-flag-key';
 ```
 
+If your client-side ID belongs to LaunchDarkly **staging**, also set `useStaging` to `true`:
+
+```
+const useStaging = true;
+```
+
 2. Open `index.html` in your browser.
 
-You should receive the message "The <flagKey> feature flag evaluates to <flagValue>." The application will run continuously and react to the flag changes in LaunchDarkly.
+You should receive the message "The <flagKey> feature flag evaluates to <flagValue>." The application will run continuously and react to the flag changes in LaunchDarkly. When the flag is on, the background turns green and Osmo, the LaunchDarkly mark, launches onto the page.
