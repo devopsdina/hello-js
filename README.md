@@ -40,5 +40,8 @@ To verify the timeout in a browser, block `clientsdk.launchdarkly.com` and `clie
 #### Tests
 
 ```
-npm test     # node --test, Node 20.4+; no dependencies
+npm install
+npm test     # node --test, Node 20.4+
 ```
+
+The tests run the real SDK (a dev dependency) against a local HTTP server that stands in for LaunchDarkly. One mode serves a flag; the other accepts connections and never answers, so the 500ms timeouts are measured rather than mocked.

@@ -8,5 +8,8 @@
   },
   "engines": {
     "node": ">=20.4"
+  },
+  "devDependencies": {
+    "@launchdarkly/js-client-sdk": "^4.13.0"
   }
 }
