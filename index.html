@@ -24,10 +24,6 @@
       // Set flagKey to the feature flag key you want to evaluate
       const flagKey = 'sample-feature-dtm';
 
-      // Set useStaging to true to connect to LaunchDarkly staging. Otherwise the
-      // SDK uses its default production endpoints.
-      const useStaging = false;
-
       // Set up the evaluation context. This context should appear on your
       // LaunchDarkly contexts dashboard soon after you run the demo.
       const context = {
@@ -45,19 +41,8 @@
         return;
       }
 
-      const stagingEndpoints = {
-        baseUri: 'https://ld-stg.launchdarkly.com',
-        streamUri: 'https://clientstream-stg.launchdarkly.com',
-        eventsUri: 'https://events-stg.launchdarkly.com',
-      };
-
       // One client per page, started with a 500ms timeout. See ld-client.js.
-      const { client: ldclient, ready } = initLaunchDarkly({
-        createClient,
-        clientSideID,
-        context,
-        options: useStaging ? stagingEndpoints : {},
-      });
+      const { client: ldclient, ready } = initLaunchDarkly({ createClient, clientSideID, context });
       const osmo = document.getElementById('osmo');
 
       function render() {

@@ -15,12 +15,6 @@ const clientSideID = 'myClientSideID';
 const flagKey = 'my-flag-key';
 ```
 
-If your client-side ID belongs to LaunchDarkly **staging**, also set `useStaging` to `true`:
-
-```
-const useStaging = true;
-```
-
 2. Serve the folder and open it in your browser. `index.html` imports `ld-client.js` as a module, which browsers block over `file://`.
 
 ```
